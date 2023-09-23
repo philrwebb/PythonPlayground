@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  bun:
+    image: oven/bun
+    init: true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
