@@ -1,10 +1,10 @@
 # Importing required libraries
-# tkinter for file dialog
 # pandas to flatten the JSON data
 import pandas as pd
 from pandas import json_normalize
 # json to deal with JSON data
 import json
+# Cocoa to access Mac UI components
 from Cocoa import NSOpenPanel, NSFileHandlingPanelOKButton
 from Foundation import NSURL
 
@@ -15,6 +15,7 @@ def choose_file():
     dialog.setCanChooseFiles_(True)
     dialog.setCanChooseDirectories_(False)
     dialog.setAllowsMultipleSelection_(False)
+    dialog.runModal()
     dialog.setTitle_("Choose a file")
 
     if dialog.runModal() == NSFileHandlingPanelOKButton:
